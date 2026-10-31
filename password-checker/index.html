@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker | Daniel Ibok</title>
+  <meta name="description" content="Check how strong a password is and see exactly why. Runs fully in your browser.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="checker.css">
+</head>
+<body>
+  <header class="site-header scrolled">
+    <nav class="nav container" aria-label="Main">
+      <a class="logo" href="../index.html">IBOK</a>
+      <a class="back-link" href="../index.html#projects">&larr; Back to portfolio</a>
+    </nav>
+  </header>
+
+  <main class="checker container">
+    <section class="checker-intro">
+      <p class="hero-label"><span class="badge">Tool</span> Security</p>
+      <h1>Password Strength Checker</h1>
+      <p>Type a password to see how strong it is and why. Everything runs in your browser. Nothing you type is sent anywhere.</p>
+    </section>
+
+    <section class="checker-card" aria-label="Password checker">
+      <label for="password">Password</label>
+      <div class="input-row">
+        <input type="password" id="password" autocomplete="off" spellcheck="false" placeholder="Try something like summer2024">
+        <button type="button" id="toggle" class="btn btn-secondary">Show</button>
+      </div>
+
+      <div class="meter" aria-hidden="true"><div class="meter-fill" id="meter-fill"></div></div>
+      <p class="verdict" id="verdict" aria-live="polite">Start typing to check a password.</p>
+      <p class="crack-time" id="crack-time"></p>
+
+      <h2>Checklist</h2>
+      <ul class="rules" id="rules">
+        <li data-rule="length">At least 12 characters</li>
+        <li data-rule="lower">A lowercase letter</li>
+        <li data-rule="upper">An uppercase letter</li>
+        <li data-rule="number">A number</li>
+        <li data-rule="symbol">A symbol (like ! @ # ?)</li>
+        <li data-rule="common">Not a commonly used password</li>
+        <li data-rule="pattern">No obvious patterns (aaa, 123, qwerty, or a word plus a year)</li>
+      </ul>
+    </section>
+
+    <section class="checker-notes">
+      <h2>How it works</h2>
+      <p>The score comes from two things. First, how many possible passwords an attacker would have to guess, based on the length and the kinds of characters used. Second, penalties for the shortcuts attackers try first: common passwords, keyboard runs and repeated characters.</p>
+      <p>The crack time assumes an offline attack at ten billion guesses per second, which is realistic for a modern graphics card against a weakly hashed password.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; 2026 Daniel Ibok</span>
+      <a href="../index.html">Back to portfolio</a>
+    </div>
+  </footer>
+
+  <script src="checker.js"></script>
+</body>
+</html>

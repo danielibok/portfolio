@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Ibok | Cybersecurity &amp; Infrastructure</title>
+  <meta name="description" content="Portfolio of Daniel Ibok, final-year Computer Science student at Pan-Atlantic University focused on cybersecurity and IT infrastructure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="logo" href="index.html">IBOK</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero banner -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-label"><span class="badge">Now showing</span> Portfolio 2026</p>
+          <h1>Daniel Ibok</h1>
+          <div class="meta">
+            <span>Final-year CS</span>
+            <span>Cybersecurity</span>
+            <span>Infrastructure</span>
+            <span>Lagos, NG</span>
+          </div>
+          <p>I set up systems, lock them down, and figure out why they broke. Final-year Computer Science student at Pan-Atlantic University.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>
+              View my work
+            </a>
+            <a class="btn btn-secondary" href="#contact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              Get in touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About me -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About <span>me</span></h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I'm a final-year Computer Science student at Pan-Atlantic University in Lagos, and the security side of computing is where I'm most at home: how systems get set up, how they're kept safe, and what happens when something goes wrong.</p>
+            <p>In 2025 I interned with the cybersecurity unit at Systemtech Services Limited. I deployed endpoint security software, built virtual machines on company servers, and used Wireshark to capture and filter network traffic. Most of what I know about troubleshooting came from fixing my own mistakes on real hardware.</p>
+            <p>Outside security, I write Python and C++, work with PostgreSQL, and use JavaScript for the web, including this site.</p>
+          </div>
+          <aside class="info-card">
+            <dl>
+              <dt>Studying</dt><dd>B.Sc. Computer Science, PAU</dd>
+              <dt>Focus</dt><dd>Endpoint security, virtualization</dd>
+              <dt>Experience</dt><dd>Cybersecurity intern, Systemtech (2025)</dd>
+              <dt>Based in</dt><dd>Lagos, Nigeria</dd>
+            </dl>
+            <h3>Toolkit</h3>
+            <ul class="tags">
+              <li>Python</li>
+              <li>C++</li>
+              <li>JavaScript</li>
+              <li>HTML/CSS</li>
+              <li>PostgreSQL</li>
+              <li>Proxmox VE</li>
+              <li>VMware</li>
+              <li>Wireshark</li>
+              <li>Device Control Plus</li>
+              <li>Ubuntu</li>
+              <li>Windows Server</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Currently working on -->
+    <section class="now" aria-labelledby="now-title">
+      <div class="container now-inner">
+        <div class="now-label">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>Currently working on</span>
+        </div>
+        <div class="now-body">
+          <h2 id="now-title">Catching Nigerian scam messages, even when AI rewrites them</h2>
+          <p>My final year project. Social engineering cost Nigerians about &#8358;8 billion in 2023, much of it through SMS and WhatsApp messages: fake credit alerts, &ldquo;update your BVN&rdquo; links and fake loan offers. I'm building a dataset of Nigerian scam messages and phishing links in English and Pidgin, training models to detect them, and testing whether they still work when a scam is reworded by tools like ChatGPT. The best model will become a web app where anyone can paste a message or link and get a verdict.</p>
+          <ul class="tags">
+            <li>Python</li>
+            <li>XGBoost</li>
+            <li>Small language model</li>
+            <li>Isolation Forest</li>
+            <li>SMOTE</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="row-header">
+          <h2 class="section-title">My <span>projects</span></h2>
+          <span class="row-hint">Swipe or scroll on smaller screens</span>
+        </div>
+
+        <div class="project-row">
+          <article class="project-card">
+            <div class="thumb">
+              <img src="images/dcp-policy-list.png" alt="Device Control Plus dashboard listing USB access policies" loading="lazy">
+              <span class="number" aria-hidden="true">1</span>
+            </div>
+            <div class="project-body">
+              <h3>USB Security Rollout</h3>
+              <p>Deployed ManageEngine Device Control Plus across work computers to stop unauthorised USB devices from reaching sensitive data.</p>
+              <ul class="tags">
+                <li>Device Control Plus</li>
+                <li>Windows</li>
+                <li>Endpoint security</li>
+              </ul>
+              <div class="project-links">
+                <a href="project.html">View full project</a>
+                <span class="note">Internal system, no public link</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="thumb">
+              <img src="images/password-checker.png" alt="Password strength checker rating a password as very strong" loading="lazy">
+              <span class="number" aria-hidden="true">2</span>
+            </div>
+            <div class="project-body">
+              <h3>Password Strength Checker</h3>
+              <p>A browser tool that rates a password and explains why it's weak: length, character mix, common passwords and patterns like a word plus a year. It also estimates how long an attacker would take to crack it.</p>
+              <ul class="tags">
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Security</li>
+              </ul>
+              <div class="project-links">
+                <a href="password-checker/index.html">Try it live</a>
+                <a href="https://github.com/danielibok/portfolio/tree/main/password-checker" target="_blank" rel="noopener">Source code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="thumb">
+              <img src="images/proxmox-ubuntu-vm.png" alt="Proxmox VE showing an Ubuntu Server virtual machine console" loading="lazy">
+              <span class="number" aria-hidden="true">3</span>
+            </div>
+            <div class="project-body">
+              <h3>Server Virtualization</h3>
+              <p>Installed hypervisors and set up Ubuntu and Windows Server 2025 virtual machines on company servers, from allocating hardware to first boot.</p>
+              <ul class="tags">
+                <li>Proxmox VE</li>
+                <li>VMware</li>
+                <li>Ubuntu Server</li>
+                <li>Windows Server 2025</li>
+              </ul>
+              <div class="project-links">
+                <span class="note">Internal system, no public link</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="thumb">
+              <img src="images/portfolio-preview.png" alt="Home page of this portfolio website" loading="lazy">
+              <span class="number" aria-hidden="true">4</span>
+            </div>
+            <div class="project-body">
+              <h3>This Portfolio</h3>
+              <p>A responsive personal site built from scratch with semantic HTML, CSS and a little JavaScript, styled like a streaming app.</p>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a href="index.html">Live site</a>
+                <a href="https://github.com/danielibok/portfolio" target="_blank" rel="noopener">Source code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="section cta" id="contact">
+      <div class="container cta-inner">
+        <div>
+          <h2>Got a role or project in mind?</h2>
+          <p>I'm open to internships, graduate roles and security work. Email or WhatsApp, I reply fast.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="mailto:danielibok23@gmail.com?subject=Hello%20Daniel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+            Email me
+          </a>
+          <a class="btn btn-whatsapp" href="https://wa.me/2348130529131" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; 2026 Daniel Ibok</span>
+      <span><a href="mailto:danielibok23@gmail.com">danielibok23@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
