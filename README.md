@@ -1,11 +1,10 @@
 # Daniel Ibok - Personal Portfolio
 
-**Name:** Daniel Utibe Ibok
-**Matric number:** 23120111022
-**Course:** CSC 419, Advances in Web, Mobile and Blockchain Development
-
-**Live site:** https://danielibok.github.io/portfolio/  
-**Repository:** https://github.com/danielibok/portfolio
+- **Name:** Daniel Utibe Ibok
+- **Matric number:** 23120111022
+- **Course:** CSC 419, Advances in Web, Mobile and Blockchain Development
+- **Live site:** https://danielibok.github.io/portfolio/
+- **Repository:** https://github.com/danielibok/portfolio
 
 ## About
 
