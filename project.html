@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB Security Rollout | Daniel Ibok</title>
+  <meta name="description" content="How Daniel Ibok deployed ManageEngine Device Control Plus to control USB access on company computers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="logo" href="index.html">IBOK</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects" class="active">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="detail-hero">
+      <div class="container">
+        <div class="hero-content">
+          <a class="back-link" href="index.html#projects">&larr; Back to projects</a>
+          <p class="hero-label"><span class="badge">Project 01</span> Cybersecurity internship</p>
+          <h1>USB Security Rollout</h1>
+          <div class="meta">
+            <span>2025</span>
+            <span>Systemtech Services Ltd</span>
+            <span>Endpoint security</span>
+          </div>
+          <p>Deploying ManageEngine Device Control Plus so a company could decide exactly which USB devices touch its computers, and for how long.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section">
+      <div class="container detail-layout">
+        <div>
+          <section class="detail-block" aria-labelledby="overview">
+            <h2 id="overview">Overview</h2>
+            <p>During my internship in the cybersecurity unit at Systemtech Services Limited, I worked on deploying Device Control Plus. It's a tool that controls and monitors USB drives and other peripherals on company computers, so sensitive data can't walk out the door on a flash drive.</p>
+            <p>I installed the agent on each work machine, wrote the access policies, grouped the computers, and rolled the policies out to them.</p>
+          </section>
+
+          <section class="detail-block" aria-labelledby="problem">
+            <h2 id="problem">The problem</h2>
+            <p>Unmanaged USB drives are one of the easiest ways for data to leave a company, and for malware to get in. Blocking every device isn't realistic because people still need to move files.</p>
+            <p>The company needed a way to trust specific devices, block everything else, and still give someone short-term access when they had a real reason.</p>
+          </section>
+
+          <section class="detail-block" aria-labelledby="features">
+            <h2 id="features">Features</h2>
+            <ol class="episodes">
+              <li>
+                <div>
+                  <h3>Agent installation</h3>
+                  <p>Installed the lightweight Device Control Plus agent on every target work computer so policies could be enforced on each one.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h3>Trusted device list</h3>
+                  <p>Added approved flash drives and hard drives as trusted devices using their parent and device instance paths.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h3>One-way file transfer</h3>
+                  <p>A policy that lets files come in from a USB drive but blocks copying company files out to one.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h3>Temporary access</h3>
+                  <p>Grants a user USB access for a set time (fixed or windowed, for example 30 minutes or an hour) and then revokes it automatically.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h3>Group-based deployment</h3>
+                  <p>Created computer groups and attached policies to them, so each rule reached exactly the machines it was meant for.</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <section class="detail-block" aria-labelledby="screenshots">
+            <h2 id="screenshots">Screenshots</h2>
+            <div class="gallery">
+              <figure>
+                <button type="button"><img src="images/dcp-policy-list.png" alt="List of published device control policies for Windows and Mac" loading="lazy"></button>
+                <figcaption>The policy list: Windows and Mac rules, all published.</figcaption>
+              </figure>
+              <figure>
+                <button type="button"><img src="images/dcp-policy-creation.png" alt="Policy creation screen with removable storage and AutoRun settings" loading="lazy"></button>
+                <figcaption>Creating a policy: trusted devices only, AutoRun disabled.</figcaption>
+              </figure>
+              <figure>
+                <button type="button"><img src="images/dcp-temporary-access.png" alt="Temporary access form with a one-hour fixed duration" loading="lazy"></button>
+                <figcaption>Temporary access: one hour, then access is taken away.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="detail-block" aria-labelledby="learned">
+            <h2 id="learned">What I learned</h2>
+            <p>A policy does nothing on its own. It only reaches machines once it's attached to a computer group, so planning the groups mattered as much as writing the rules.</p>
+            <p>The bigger lesson was how classroom theory turns into real settings. The peripheral security ideas from my Computer Security course made sense on paper, but choosing between blocking, read-only and temporary access for real people taught me to think about how users actually work, not just what's most secure.</p>
+            <p>I also learned to ask for help early. Working alongside the server engineers and my supervisor saved me hours of guessing.</p>
+          </section>
+        </div>
+
+        <aside class="sidebar">
+          <div class="info-card">
+            <h3>Technologies used</h3>
+            <ul class="tags">
+              <li>ManageEngine Device Control Plus</li>
+              <li>Windows</li>
+              <li>macOS endpoints</li>
+              <li>Device instance paths</li>
+              <li>Computer groups</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <dl>
+              <dt>Role</dt><dd>Cybersecurity intern</dd>
+              <dt>Year</dt><dd>2025</dd>
+              <dt>Live link</dt><dd>Internal system, not public</dd>
+            </dl>
+            <a class="btn btn-primary" href="index.html#contact">Ask me about it</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+    <button class="lightbox-close" aria-label="Close preview">&times;</button>
+    <img src="" alt="">
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; 2026 Daniel Ibok</span>
+      <span><a href="mailto:danielibok23@gmail.com">danielibok23@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

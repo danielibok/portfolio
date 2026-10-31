@@ -1,0 +1,148 @@
+/* Styles for the password checker. Colours and fonts come from ../css/style.css */
+
+.checker {
+  padding-top: 110px;
+  padding-bottom: 64px;
+  max-width: 760px;
+}
+
+.checker-intro h1 {
+  font-size: clamp(2.6rem, 8vw, 4.5rem);
+  margin-bottom: 12px;
+}
+
+.checker-intro p {
+  color: var(--muted);
+  margin: 0 0 32px;
+}
+
+.checker-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(20px, 4vw, 32px);
+}
+
+.checker-card label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.input-row input {
+  flex: 1;
+  min-width: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  padding: 12px 14px;
+}
+
+.input-row input:focus {
+  outline: 2px solid var(--blue);
+  border-color: transparent;
+}
+
+.input-row .btn {
+  flex: 0 0 auto;
+}
+
+.meter {
+  height: 10px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  margin: 20px 0 12px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0;
+  background: var(--red);
+  transition: width 0.3s, background 0.3s;
+}
+
+.verdict {
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.crack-time {
+  color: var(--muted);
+  margin: 4px 0 0;
+  min-height: 1.6em;
+}
+
+.checker-card h2,
+.checker-notes h2 {
+  font-size: 1.8rem;
+  margin: 28px 0 12px;
+}
+
+.rules {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.rules li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--muted);
+}
+
+/* Each rule gets an icon: a grey dot by default, a tick when passed, a cross when failed */
+.rules li::before {
+  content: "\2022";
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface-2);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.rules li.pass {
+  color: var(--text);
+}
+
+.rules li.pass::before {
+  content: "\2713";
+  background: #1f6f3a;
+  color: #fff;
+}
+
+.rules li.fail::before {
+  content: "\2715";
+  background: var(--red-dark);
+  color: #fff;
+}
+
+.checker-notes p {
+  color: #cfcfd6;
+  margin: 0 0 14px;
+}
+
+.site-header .back-link {
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .site-header .back-link {
+    font-size: 0.9rem;
+  }
+}
