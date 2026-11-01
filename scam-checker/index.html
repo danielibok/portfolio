@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naija Scam Message Checker | Daniel Ibok</title>
+  <meta name="description" content="Paste a suspicious SMS or WhatsApp message and see the scam red flags in it. Built for the scams Nigerians actually receive.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="checker.css">
+</head>
+<body>
+  <header class="site-header scrolled">
+    <nav class="nav container" aria-label="Main">
+      <a class="logo" href="../index.html">IBOK</a>
+      <a class="back-link" href="../index.html#projects">&larr; Back to portfolio</a>
+    </nav>
+  </header>
+
+  <main class="checker container">
+    <section class="checker-intro">
+      <p class="hero-label"><span class="badge">Tool</span> Scam detection</p>
+      <h1>Naija Scam Message Checker</h1>
+      <p>Got a strange SMS or WhatsApp message? Paste it below and see the red flags. It checks for the tricks Nigerian scammers use most: BVN and OTP requests, "processing fees", account threats and fake bank links. Everything runs in your browser and nothing is sent anywhere.</p>
+    </section>
+
+    <section class="checker-card" aria-label="Message checker">
+      <label for="message">Message</label>
+      <textarea id="message" rows="6" placeholder="Paste the message here..."></textarea>
+
+      <div class="actions">
+        <button type="button" id="check" class="btn btn-primary">Check message</button>
+        <button type="button" id="clear" class="btn btn-secondary">Clear</button>
+      </div>
+
+      <div class="samples">
+        <span>Try an example:</span>
+        <button type="button" class="sample" data-sample="bvn">BVN update</button>
+        <button type="button" class="sample" data-sample="job">Job offer</button>
+        <button type="button" class="sample" data-sample="alert">Wrong transfer</button>
+        <button type="button" class="sample" data-sample="safe">Real OTP text</button>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <div class="meter" aria-hidden="true"><div class="meter-fill" id="meter-fill"></div></div>
+        <p class="verdict" id="verdict" aria-live="polite"></p>
+        <p class="crack-time" id="summary"></p>
+
+        <h2>Red flags found</h2>
+        <ul class="flags" id="flags"></ul>
+
+        <h2>Your message, highlighted</h2>
+        <p class="highlighted" id="highlighted"></p>
+      </div>
+    </section>
+
+    <section class="checker-notes">
+      <h2>How it works</h2>
+      <p>The checker looks for patterns that show up again and again in Nigerian scam messages. Each pattern carries a weight, and the weights add up to a score. A message asking for your BVN plus a link to a fake bank site scores far higher than one that just says "urgent".</p>
+      <p>Links get extra attention. The checker flags shortened links, links to raw IP addresses, cheap domain endings like .xyz, and any link that uses a bank's name but isn't the bank's real website.</p>
+      <p>This is a rule-based first version. For my final year project I'm training machine learning models to do the same job, including on scams that have been reworded by AI to slip past rules like these.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; 2026 Daniel Ibok</span>
+      <a href="../index.html">Back to portfolio</a>
+    </div>
+  </footer>
+
+  <script src="checker.js"></script>
+</body>
+</html>
