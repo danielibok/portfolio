@@ -14,7 +14,6 @@ A responsive personal portfolio built from scratch with HTML, CSS and vanilla Ja
 
 - `index.html`: hero, About Me, projects, and contact (email and WhatsApp)
 - `project.html`: full write-up of the USB Security Rollout project
-- `scam-checker/`: Naija Scam Message Checker, a working tool that flags red flags in suspicious SMS/WhatsApp messages (live project)
 
 ## Structure
 
