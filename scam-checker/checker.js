@@ -1,6 +1,4 @@
-// Naija Scam Message Checker
-// Rule-based: each rule looks for a known scam pattern and adds to the score.
-// Everything runs in the browser; the message is never sent anywhere.
+// runs fully in the browser, nothing gets sent anywhere
 
 const messageBox = document.getElementById("message");
 const checkBtn = document.getElementById("check");
@@ -12,7 +10,6 @@ const summary = document.getElementById("summary");
 const flagList = document.getElementById("flags");
 const highlighted = document.getElementById("highlighted");
 
-// ---------- Example messages ----------
 const SAMPLES = {
   bvn: "Dear Customer, your GTBank account has been restricted due to incomplete BVN. Kindly update your BVN within 24hrs to avoid permanent deactivation. Click: http://gtbank-verify-ng.xyz/update",
   job: "Congratulations! You have been shortlisted for a remote Shell Nigeria job paying N350,000 monthly. Pay a registration fee of N5,000 to confirm your slot. Oya chat this number sharp sharp: wa.me/2348000000000",
@@ -20,9 +17,7 @@ const SAMPLES = {
   safe: "Your Access Bank OTP is 482913. It expires in 5 minutes. Do not share this code with anyone, including bank staff."
 };
 
-// ---------- Reference lists ----------
-// Real domains for Nigerian banks and agencies. A link that uses one of these
-// names but isn't on the real domain is a strong sign of a fake site.
+// real bank/agency domains, used to catch fake lookalike links
 const OFFICIAL_DOMAINS = {
   gtbank: "gtbank.com",
   gtco: "gtcoplc.com",
@@ -46,8 +41,6 @@ const OFFICIAL_DOMAINS = {
 const SHORTENERS = ["bit.ly", "tinyurl.com", "t.co", "cutt.ly", "rb.gy", "is.gd", "shorturl.at", "tiny.cc", "ow.ly"];
 const CHEAP_TLDS = [".xyz", ".top", ".click", ".live", ".online", ".site", ".buzz", ".info", ".icu", ".shop"];
 
-// ---------- Rules ----------
-// Each rule has: a name, a weight, an explanation, and a regex for the words to highlight.
 const RULES = [
   {
     id: "sensitive",
@@ -55,7 +48,7 @@ const RULES = [
     weight: 3,
     why: "No bank or agency will ever ask for these by SMS or WhatsApp. With them, a scammer can empty your account.",
     pattern: /\b(bvn|nin|otp|pin|cvv|password|card number|token|security code)\b/gi,
-    // A genuine OTP text tells you NOT to share it, so don't flag that case.
+    // real OTP texts say don't share it, so skip those
     skipIf: /(do not|don't|never) share/i
   },
   {
@@ -102,8 +95,6 @@ const RULES = [
   }
 ];
 
-// ---------- Link checks ----------
-// Matches web addresses (example.com/path) and raw IP addresses (192.168.0.1/path).
 const URL_PATTERN = /\b((https?:\/\/)?(([a-z0-9-]+\.)+[a-z]{2,}|\d{1,3}(\.\d{1,3}){3})(:\d+)?(\/[^\s]*)?)/gi;
 
 function checkLink(url) {
@@ -133,14 +124,13 @@ function checkLink(url) {
   return problems;
 }
 
-// ---------- Main check ----------
 function escapeHtml(text) {
   return text.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
 function analyse(text) {
   const flags = [];
-  const highlights = []; // [start, end] positions to mark
+  const highlights = [];
 
   for (const rule of RULES) {
     if (rule.skipIf && rule.skipIf.test(text)) continue;
@@ -169,7 +159,7 @@ function analyse(text) {
 }
 
 function highlight(text, ranges) {
-  // Merge overlapping ranges, then wrap each one in <mark>.
+  // merge overlaps first or the marks break
   ranges.sort((a, b) => a[0] - b[0]);
   const merged = [];
   for (const r of ranges) {
@@ -226,7 +216,6 @@ function runCheck() {
   result.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// ---------- Events ----------
 checkBtn.addEventListener("click", runCheck);
 
 clearBtn.addEventListener("click", () => {

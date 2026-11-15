@@ -1,6 +1,4 @@
-// Mobile menu, header background on scroll, and screenshot lightbox.
-
-// 1. Mobile menu toggle
+// mobile menu
 const toggle = document.querySelector(".nav-toggle");
 const links = document.querySelector(".nav-links");
 
@@ -10,7 +8,6 @@ if (toggle && links) {
     toggle.setAttribute("aria-expanded", isOpen);
   });
 
-  // Close the menu after picking a link
   links.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       links.classList.remove("open");
@@ -19,7 +16,6 @@ if (toggle && links) {
   });
 }
 
-// 2. Solid header once the page is scrolled
 const header = document.querySelector(".site-header");
 
 function updateHeader() {
@@ -29,7 +25,7 @@ function updateHeader() {
 window.addEventListener("scroll", updateHeader);
 updateHeader();
 
-// 3. Lightbox for screenshots on the project page
+// lightbox, only on project page
 const lightbox = document.querySelector(".lightbox");
 
 if (lightbox) {
